@@ -11,8 +11,8 @@
 #define HASHTABLE_H
 
 #include <iostream>
-#include <list>
 #include <vector>
+#include <list>
 #include <utility>  //std::pair
 
 template <class K, class V>
