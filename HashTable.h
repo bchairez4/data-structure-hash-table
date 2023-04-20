@@ -1,7 +1,6 @@
 /*****************************************************************************
 *    Brian Chairez                                                           *
 *    Goal: Implementation of Hash Table using a vector of lists of pairs     *
-*    Progess: Basic implementation and methods complete                      *
 *****************************************************************************/
 
 // Default Bucket Size Starts at 5. No tolerance for collisions: Collisions lead to resizing and rehashing the whole table.
