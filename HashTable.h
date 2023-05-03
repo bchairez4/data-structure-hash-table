@@ -9,7 +9,6 @@
 #ifndef HASHTABLE_H
 #define HASHTABLE_H
 
-#include <iostream>
 #include <vector>
 #include <list>
 #include <utility>  //std::pair
@@ -33,7 +32,6 @@ class HashTable {
         bool empty() const;
         int bucket_count() const;
         int size() const;
-        void print() const;
 };
 
 #endif
