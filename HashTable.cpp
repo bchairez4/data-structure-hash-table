@@ -121,22 +121,6 @@ int HashTable<K, V>::size() const {
     return size;
 }
 
-template <class K, class V>
-void HashTable<K, V>::print() const {
-    for (int i = 0; i < bucket_count(); ++i) {
-        if (!hash_table_[i].empty()) {
-            std::cout << "Bucket[" << i << "]: ";
-            typename std::list<std::pair<K,V>>::const_iterator it = hash_table_[i].begin();
-            while (it != hash_table_[i].end()) {
-                std::cout << "Key: " << (*it).first << " "
-                          << "Value: " << (*it).second;
-                ++it;
-            }
-            std::cout << '\n';
-        }
-    }
-}
-
 /*****************************************************************************
     Private Functions
 *****************************************************************************/
