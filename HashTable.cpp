@@ -54,7 +54,7 @@ void HashTable<K, V>::erase(const K& key) {
         return;
     }
 
-    typename std::list<std::pair<K, V>>::const_iterator it = hash_table_[hash(key)].begin();
+    typename std::list<std::pair<K, V>>::const_iterator it = hash_table_[hash(key)].cbegin();
     while ((*it).first != key) {
         ++it;
     }
@@ -86,8 +86,8 @@ bool HashTable<K, V>::contains(const K& key) const {
         return false;
     }
 
-    typename std::list<std::pair<K, V>>::const_iterator it = hash_table_[hash(key)].begin();
-    while (it != hash_table_[hash(key)].end()) {
+    typename std::list<std::pair<K, V>>::const_iterator it = hash_table_[hash(key)].cbegin();
+    while (it != hash_table_[hash(key)].cend()) {
         if ((*it).first == key) {
             return true;
         }
@@ -131,8 +131,8 @@ void HashTable<K, V>::rehash_() {
 
     for (int i = 0; i < bucket_count(); ++i) {
         if (!hash_table_[i].empty()) {
-            typename std::list<std::pair<K, V>>::const_iterator it = hash_table_[i].begin();
-            while (it != hash_table_[i].end()) {
+            typename std::list<std::pair<K, V>>::const_iterator it = hash_table_[i].cbegin();
+            while (it != hash_table_[i].cend()) {
                 temp_hash_table[hash((*it).first)].push_back((*it));
                 ++it;
             }
